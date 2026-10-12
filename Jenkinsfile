@@ -17,9 +17,7 @@ pipeline {
         }
         stage('Docker Image Build') {
             steps {
-                script {
-                    docker.image('movie-watchlist:latest').build('.')
-                }
+                sh 'docker build -t movie-watchlist:latest .'
             }
         }
     }
